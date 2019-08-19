@@ -28,12 +28,12 @@ namespace HR
         /// 計算薪資
         /// </summary>
         /// <param name="WorkHours">工時</param>
-        /// <param name="Hourly">時薪</param>
+        /// <param name="HourlyWage">時薪</param>
         /// <param name="PrivateDayOff">請假天數</param>
         /// <returns></returns>
-        public float Calculate(float WorkHours, int Hourly, int PrivateDayOffHours)
+        public float Calculate(float WorkHours, int HourlyWage, int PrivateDayOffHours)
         {
-            return _SalaryFormula.Execute(WorkHours, Hourly, PrivateDayOffHours);
+            return _SalaryFormula.Execute(WorkHours, HourlyWage, PrivateDayOffHours);
         }
     }
 
@@ -44,7 +44,7 @@ namespace HR
     public interface ISalaryFormula
     {
         //薪資=工時*時薪-(事假時數*時薪)
-        float Execute(float WorkHours, int Hourly, int PrivateDayOffHours);
+        float Execute(float WorkHours, int HourlyWage, int PrivateDayOffHours);
     }
 
     /// <summary>
@@ -56,23 +56,23 @@ namespace HR
         /// 實際計算薪資
         /// </summary>
         /// <param name="WorkHours"></param>
-        /// <param name="Hourly"></param>
+        /// <param name="HourlyWage"></param>
         /// <param name="PrivateDayOffHours"></param>
         /// <returns></returns>
-        public float Execute(float WorkHours, int Hourly, int PrivateDayOffHours)
+        public float Execute(float WorkHours, int HourlyWage, int PrivateDayOffHours)
         {
             //薪資=工時*時薪-(事假時數*時薪)
-            return WorkHours * Hourly - (PrivateDayOffHours * Hourly );
+            return WorkHours * HourlyWage - (PrivateDayOffHours * HourlyWage );
         }
     }
 
     //計算老闆薪資公式的類別
     public class BossSalaryFormula : ISalaryFormula
     {
-        public float Execute(float WorkHours, int Hourly, int PrivateDayOffHours)
+        public float Execute(float WorkHours, int HourlyWage, int PrivateDayOffHours)
         {
             //老闆請假不扣薪
-            return WorkHours * Hourly - (PrivateDayOffHours * Hourly * 0);
+            return WorkHours * HourlyWage - (PrivateDayOffHours * HourlyWage * 0);
         }
     }
 

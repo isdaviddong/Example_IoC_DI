@@ -16,13 +16,13 @@ namespace MyCustomerHR
         /// 實際計算薪資
         /// </summary>
         /// <param name="WorkHours"></param>
-        /// <param name="Hourly"></param>
+        /// <param name="HourlyWage"></param>
         /// <param name="PrivateDayOffHours"></param>
         /// <returns></returns>
-        public float Execute(float WorkHours, int Hourly, int PrivateDayOffHours)
+        public float Execute(float WorkHours, int HourlyWage, int PrivateDayOffHours)
         {
             //薪資=工時*時薪-(事假時數*時薪)
-            return 1000000; // WorkHours * Hourly - (PrivateDayOffHours * Hourly * 0);
+            return 1000000; // WorkHours * HourlyWage - (PrivateDayOffHours * HourlyWage * 0);
         }
     }
 }

@@ -28,10 +28,10 @@ namespace ConsoleApp2
         //老闆薪資計算公式
         class BossSalaryFormula : ISalaryFormula
         {
-            public float Execute(float WorkHours, int Hourly, int PrivateDayOffHours)
+            public float Execute(float WorkHours, int HourlyWage, int PrivateDayOffHours)
             {
                 //老闆請假不扣薪!!!!!!!
-                return WorkHours * Hourly - (PrivateDayOffHours * Hourly * 0);
+                return WorkHours * HourlyWage - (PrivateDayOffHours * HourlyWage * 0);
             }
         }
     }
