@@ -31,11 +31,11 @@ namespace WebApplicationLoggin
             }
 
             app.UseMvc();
-            return;
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            //return;
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
         }
     }
 }

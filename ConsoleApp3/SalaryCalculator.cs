@@ -25,7 +25,7 @@ namespace HR
             _SalaryFormula = SalaryFormula;
         }
         /// <summary>
-        /// 計算薪資
+        /// 實際計算薪資
         /// </summary>
         /// <param name="WorkHours">工時</param>
         /// <param name="HourlyWage">時薪</param>
