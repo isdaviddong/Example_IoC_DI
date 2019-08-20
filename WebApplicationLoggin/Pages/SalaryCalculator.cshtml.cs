@@ -18,8 +18,9 @@ namespace WebApplicationLoggin.Pages
         public float Salary { get; set; }
         public  ActionResult  OnGet()
         {
-            HR.SalaryCalculator SalaryCalculator = new HR.SalaryCalculator(_SalaryFormula);
-            Salary = SalaryCalculator.Calculate(8 * 18, 250, 8 * 2);
+            HR.SalaryCalculator SalaryCalculator = 
+                new HR.SalaryCalculator(_SalaryFormula);
+            Salary = SalaryCalculator.Calculate(8 * 19, 200, 8 * 1);
             return Page();
         }
     }
